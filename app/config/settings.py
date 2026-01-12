@@ -25,16 +25,21 @@ class Settings(BaseSettings):
     # Vertex AI settings
     VERTEX_AI_PROJECT_ID: str = ""
     VERTEX_AI_LOCATION: str = "us-central1"
+    VERTEX_AI_REGION: str = "us-central1"
     VERTEX_AI_MODEL: str = "gemini-2.0-flash-exp"
     
     # Agent settings
     AGENT_NAME: str = "LifestyleAssistant"
     AGENT_DESCRIPTION: str = "A helpful lifestyle assistant with various daily life tools"
     
+    # Logging
+    LOG_LEVEL: str = "INFO"
+
     # External API keys (optional for tools)
     WEATHER_API_KEY: Optional[str] = None
     NEWS_API_KEY: Optional[str] = None
     EXCHANGE_RATE_API_KEY: Optional[str] = None
+    SERPER_API_KEY: Optional[str] = None
     
     class Config:
         env_file = ".env"

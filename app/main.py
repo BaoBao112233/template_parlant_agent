@@ -100,16 +100,8 @@ async def get_agent_info():
         agent = await get_agent()
         
         tools_list = [
-            "Weather forecast",
-            "Recipe search",
-            "BMI calculator",
-            "Calorie counter",
-            "Currency converter",
-            "Date/Time utilities",
-            "Translation",
-            "Random decisions (coin flip, dice)",
-            "News headlines",
-            "Daily inspiration quotes"
+            "Google Serper Search",
+            "Web Crawler"
         ]
         
         return AgentInfo(
@@ -155,50 +147,15 @@ async def chat(message: ChatMessage):
 async def list_tools():
     """List all available tools with descriptions."""
     tools = {
-        "weather": {
-            "name": "Weather Forecast",
-            "description": "Get current weather for any city",
-            "example": "What's the weather in Hanoi?"
+        "search": {
+            "name": "Google Serper Search",
+            "description": "Search the internet for information",
+            "example": "Search for 'pickleball hanoi'"
         },
-        "recipes": {
-            "name": "Recipe Search",
-            "description": "Search recipes by ingredient and get cooking instructions",
-            "example": "Find me recipes with chicken"
-        },
-        "fitness": {
-            "name": "Fitness Tools",
-            "description": "BMI calculator, calorie counter, water intake recommendations",
-            "example": "Calculate my BMI for 70kg and 175cm"
-        },
-        "currency": {
-            "name": "Currency Converter",
-            "description": "Convert between different currencies",
-            "example": "Convert 100 USD to VND"
-        },
-        "datetime": {
-            "name": "Date & Time",
-            "description": "Get current time, calculate age, date differences",
-            "example": "What time is it in Tokyo?"
-        },
-        "translation": {
-            "name": "Translation",
-            "description": "Translate text to different languages",
-            "example": "Translate 'Hello' to Vietnamese"
-        },
-        "random": {
-            "name": "Random Decisions",
-            "description": "Flip coins, roll dice, pick random choices",
-            "example": "Flip a coin for me"
-        },
-        "news": {
-            "name": "News Headlines",
-            "description": "Get latest news by category",
-            "example": "Show me technology news"
-        },
-        "quotes": {
-            "name": "Daily Inspiration",
-            "description": "Get motivational quotes",
-            "example": "Give me an inspirational quote"
+        "crawler": {
+            "name": "Web Crawler",
+            "description": "Read content from a specific URL",
+            "example": "Read http://example.com"
         }
     }
     
